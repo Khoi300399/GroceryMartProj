@@ -12,25 +12,24 @@ gulp.task("sass", function () {
     .src("./app/**/scss/*.scss")
     .pipe(sass())
     .pipe(autoprefixer())
+    .pipe(rename("style.css"))
     .pipe(cssnano())
-    .pipe(rename("index.css"))
-    .pipe(gulp.dest("./app/public/css/"))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest("./app/public/css/"));
 });
 
 // Biên dịch Pug thành HTML
 gulp.task("pug", function () {
   return gulp
-    .src("./app/src/views/*.pug")
+    .src("./app/src/views/*.pug", { sourcemaps: true })
     .pipe(pug({ pretty: true }))
-    .pipe(gulp.dest("./app/public/views/"));
+    .pipe(gulp.dest("./app/public/"));
 });
 
 // Tạo máy chủ phát triển cục bộ và tự động làm mới trình duyệt
 gulp.task("serve", function () {
   browserSync.init({
     server: {
-      baseDir: "./app/public/views",
+      baseDir: "./app/public",
     },
   });
   gulp
@@ -40,7 +39,7 @@ gulp.task("serve", function () {
 });
 
 // Tác vụ xây dựng chính
-gulp.task("build", gulp.parallel("sass", "pug"));
+gulp.task("build", gulp.series("sass", "pug"));
 
 // Tác vụ mặc định
 gulp.task("default", gulp.series("build", "serve"));
