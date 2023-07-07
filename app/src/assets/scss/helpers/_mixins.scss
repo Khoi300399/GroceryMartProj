@@ -1,0 +1,57 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin text($fs, $fw: 500, $color: $primary-color, $position: left) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+  text-align: $position;
+}
+
+@mixin absoluteCenter($direction: "left") {
+  position: absolute;
+  @if $direction == "left" {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $direction == "top" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $direction == "both" {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin flexBox(
+  $aling-items: stretch,
+  $justify-content: stretch,
+  $direction: "row",
+  $wrap: "no-wrap"
+) {
+  display: flex;
+  align-items: $aling-items;
+  justify-content: $justify-content;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin maxWidth($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+@mixin minWidth($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+@mixin bothWidth($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
