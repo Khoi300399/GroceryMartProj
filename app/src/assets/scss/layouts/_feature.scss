@@ -1,0 +1,37 @@
+.feature {
+  overflow: hidden;
+  #owl-feature:hover .btn-next,
+  #owl-feature:hover .btn-prev {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .btn-next,
+  .btn-prev {
+    position: absolute;
+    top: 40%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffff;
+    border-radius: 50%;
+    color: #333;
+    font-size: 2.2rem;
+    box-shadow: 0px 0px 10px 0px #c4c4c4;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      background: $secondary-color;
+      color: #fff;
+    }
+  }
+  .btn-next {
+    right: -20px;
+  }
+  .btn-prev {
+    left: -20px;
+  }
+}

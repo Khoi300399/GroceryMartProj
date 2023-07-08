@@ -1,0 +1,15 @@
+.rated-box {
+  height: 100%;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e1dcdc;
+  border-radius: 10px;
+
+  .rated-title {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    text-transform: capitalize;
+    @include text(1.8rem, 700);
+  }
+}

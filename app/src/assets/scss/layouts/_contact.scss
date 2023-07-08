@@ -1,0 +1,31 @@
+.contact {
+  padding-block: 30px;
+  background-color: $secondary-color;
+  &__title {
+    font-family: $secondary-font;
+    @include text(2.6rem, 700, #fff);
+    margin-bottom: 30px;
+  }
+  &-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #fff;
+    color: $secondary-color;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    border-radius: 35px;
+    transition: all 0.3s;
+    &:hover {
+      background: $secondary-color;
+      color: #fff;
+    }
+  }
+}
+
+@include minWidth(767.98px) {
+  .contact {
+    &__title {
+      margin-bottom: 0;
+    }
+  }
+}

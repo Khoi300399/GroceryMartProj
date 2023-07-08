@@ -1,0 +1,5 @@
+@include minWidth(575.98px) {
+  .wrapper-btn {
+    @include flexBox(center, flex-end);
+  }
+}

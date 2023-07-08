@@ -1,0 +1,66 @@
+section.product 
+    div.container 
+        div.row
+            div.col-12.col-lg-9
+                div.product__deal 
+                    h2.product__title  Deals Hot of The Day 
+                    div#owl-product.owl-carousel
+                        +productItem({
+                            image:"./images/product2.png",
+                            name:"Goodday Fresh Pasteur Milk 2 Liter",
+                            decs:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac dui sed nunc sagittis maximus.",
+                            price:"$200",
+                            sale:"$210",
+                            countdownId:"cd",
+                            date:"2024/7/8"
+                        })
+                        +productItem({
+                            image:"./images/product4.png",
+                            name:"Goodday Fresh Pasteur Milk 2 Liter",
+                            decs:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac dui sed nunc sagittis maximus.",
+                            price:"$200",
+                            sale:"$210",
+                            countdownId:"cd1",
+                            date:"2025/8/8"
+                        })
+                        +productItem({
+                            image:"./images/product6.png",
+                            name:"Goodday Fresh Pasteur Milk 2 Liter",
+                            decs:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac dui sed nunc sagittis maximus.",
+                            price:"$200",
+                            sale:"$210",
+                            countdownId:"cd2",
+                            date:"2023/9/8"
+                        })
+            div.col-12.col-lg-3
+                +ratedBox({title:"Top rated products "})
+                    +ratedCard({
+                        image:"./images/product1.png",
+                        name:"Fresh Red Seedless",
+                        price:"$200",
+                        sale:"$210",
+                    })
+                    +ratedCard({
+                        image:"./images/product3.png",
+                        name:"Fresh Red Seedless",
+                        price:"$200",
+                        sale:"$210",
+                    })
+                    +ratedCard({
+                        image:"./images/product5.png",
+                        name:"Fresh Red Seedless",
+                        price:"$200",
+                        sale:"$210",
+                    })
+                    +ratedCard({
+                        image:"./images/product7.png",
+                        name:"Fresh Red Seedless",
+                        price:"$200",
+                        sale:"$210",
+                    })
+                    +ratedCard({
+                        image:"./images/product8.png",
+                        name:"Fresh Red Seedless",
+                        price:"$200",
+                        sale:"$210",
+                    })

@@ -2,3 +2,140 @@ mixin textIcon(data)
     span.text-icon 
         i.icon(class= data.icon)
         i.text= data.text
+
+mixin productCard(data)
+    div.product-card 
+        div.product-img 
+            img(src= data.image, alt="product")
+        div.product-info 
+            if data.rating === "rating"
+                div.rating 
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+            h3.product-name= data.name
+            div.product-price
+                span= data.price 
+                del= data.sale
+        div.heart 
+            i(class="far fa-heart")
+        div.eyes
+            i(class="far fa-eye")
+       
+        if data.tag === "sale"
+            span.sale Sale 
+        if data.tag === "hot"
+            span.hot= data.percent
+
+mixin productItem(data)
+    div.product__item
+        div.row 
+            div.col-12.col-md-5
+                div.product__thumbnail
+                    img(src= data.image, alt="...")
+            div.col-12.col-md-7
+                div.product__countdown(data-countdown= data.date ,id= data.countdownId) 
+                    ul.countdown-list
+                        li.countdown-item
+                            span#days.number %d
+                            span.text Days
+                        li.countdown-item
+                            span#hours.number %h
+                            span.text Hours
+                        li.countdown-item
+                            span#minutes.number %m
+                            span.text Minute 
+                        li.countdown-item
+                            span#seconds.number %s
+                            span.text Sec
+                h3.product__name= data.name
+                div.product__price 
+                    span= data.price
+                    del= data.sale
+                div.product__rating
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        small ( 25 Reviews )
+                p.product__decs= data.decs
+                div.product__cart
+                    ul
+                        li
+                            span
+                                i(class="fa-solid fa-plus")
+                        li 
+                            input(type="number" value="1")
+                        li 
+                            span
+                                i(class="fa-solid fa-minus")
+                    a.btn-cart(href="#!")
+                        i(class="fas fa-shopping-cart")
+                        |   Add to cart
+
+mixin ratedCard(data)
+    div.rated-card
+        div.thumb
+            img(src= data.image, alt="rated")
+        div.content
+            h4.rated__name= data.name 
+            div.rated__rating
+                span 
+                    i(class="fas fa-star")
+                span 
+                    i(class="fas fa-star")
+                span 
+                    i(class="fas fa-star")
+                span 
+                    i(class="fas fa-star")
+                span 
+                    i(class="fas fa-star")
+            div.rated__price 
+                        span= data.price
+                        del= data.sale
+mixin ratedBox(data)
+    div.rated-box
+        h2.rated-title=  data.title 
+        div.rated-content
+            if block 
+                block
+
+mixin heading(data)
+    div.row.mb-5
+        div.col-12.col-sm-6
+            h2.title= data.title
+        div.col-12.col-sm-6
+            div.wrapper-btn
+                a.button(href="#!") View All
+
+mixin blogCard(data)
+    div.blog-card
+        div.thumb 
+            img(src= data.image, alt="blog")
+            div.date
+                span 
+                    i(class="fas fa-calendar-alt")
+                    |   19 Nov 2021
+        div.content
+            h3.title= data.title
+            p.decs= data.decs
+            div.bottom 
+                div.author
+                    img(src="./images/author.jpg", alt="avatar")
+                    span Sarah Taylor
+                span.author-btn 
+                    i(class="bi bi-arrow-right")

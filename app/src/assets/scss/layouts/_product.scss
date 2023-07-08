@@ -1,0 +1,151 @@
+.product {
+  padding: 20px 0 50px;
+  &__item {
+    overflow: hidden;
+  }
+  &__deal {
+    padding: 20px;
+    border: 1px solid #e1dcdc;
+    background: #fff;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 10px;
+  }
+  &__title {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    text-transform: capitalize;
+    @include text(1.8rem, 700);
+  }
+  &__thumbnail {
+    padding: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__countdown {
+    margin-bottom: 10px;
+  }
+  .countdown-list {
+    @include flexBox(center);
+    gap: 5px;
+  }
+  .countdown-item {
+    @include flexBox(center, center, column);
+    @include size(60px);
+    border-radius: 50%;
+    background: #000;
+    .number {
+      @include text(2rem, 700, #fff);
+    }
+    .text {
+      @include text(1.3rem, 600, $secondary-color);
+    }
+  }
+  &__name {
+    font-family: $secondary-font;
+    padding-block: 10px 5px;
+    @include text(2.2rem, 700);
+  }
+  &__price {
+    span {
+      @include text(2.5rem, 700, $secondary-color);
+    }
+    del {
+      @include text(1.4rem, 500);
+    }
+  }
+  .product__rating {
+    @include text(1.5rem, 500, $yellow);
+
+    small {
+      @include text(1.2rem, 400, $secondary-color);
+    }
+  }
+  &__decs {
+    padding-bottom: 10px;
+    margin-top: 10px;
+    line-height: 1.5;
+    @include text(1.4rem, normal, #666);
+  }
+  &__cart {
+    @include flexBox(center);
+    gap: 20px;
+    ul {
+      @include flexBox(center);
+    }
+
+    input {
+      text-align: center;
+      outline: none;
+      border: 1px solid $secondary-color;
+      @include size(60px, 40px);
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      appearance: none;
+    }
+    span {
+      @include flexBox(center, center);
+      @include size(40px);
+      background: $secondary-color;
+      color: #fff;
+      font-weight: 600;
+    }
+    .btn-cart {
+      padding: 15px 20px;
+      border-radius: 5px;
+      @include text(1.2rem, 500, #fff);
+      text-transform: uppercase;
+      background: $secondary-color;
+      transition: all 0.5s;
+      &:hover {
+        background: $primary-color;
+      }
+    }
+  }
+  .owl-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-200%);
+
+    .owl-prev,
+    .owl-next {
+      margin-left: 10px;
+      font-size: 20px;
+      transition: all 0.3s;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+@include minWidth(1199.98px) {
+  .product {
+    &__name {
+      font-size: 3.2rem;
+    }
+  }
+}
+@include minWidth(1199.98px) {
+  .product {
+    &__price {
+      span {
+        font-size: 3rem;
+      }
+      del {
+        font-size: 1.8rem;
+      }
+    }
+    &__decs {
+      font-size: 2rem;
+    }
+  }
+}

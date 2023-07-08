@@ -5,9 +5,24 @@
 @import "./base/typography";
 
 @import "./components/btn";
+@import "./components/productCard";
+@import "./components/ratedCard";
+@import "./components/ratedBox";
+@import "./components/heading";
+@import "./components/blogCard";
 
 @import "./vendor/textIcon";
+@import "./vendor/title";
 
 @import "./layouts/header";
 @import "./layouts/hero";
 @import "./layouts/services";
+@import "./layouts/banner";
+@import "./layouts/popular";
+@import "./layouts/product";
+@import "./layouts/sale";
+@import "./layouts/widgets";
+@import "./layouts/feature";
+@import "./layouts/contact";
+@import "./layouts/blog";
+@import "./layouts/testimonial";
