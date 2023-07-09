@@ -54,7 +54,10 @@ html(lang="en")
     include ./layouts/contact
     include ./layouts/blog
     include ./layouts/testimonial
-
+    include ./layouts/subscribe
+    include ./layouts/footer
+    button#backToTop
+      i(class="bi bi-arrow-up")
 
 
     //- Jquery
@@ -114,6 +117,44 @@ html(lang="en")
           },
         }
         });
+        $('#owl-testimonial').owlCarousel({
+        items:1,
+        margin:20,
+        dots:true,
+        responsive:{
+          992:{
+            items:2,
+          },
+        }
+        });
       });
     //- Countdown JS
     script(src="./vendor/countdown/yscountdown.min.js")
+    //- back to top
+    script.
+      $(document).ready(function(){
+        $(window).scroll(function(){
+          if($(this).scrollTop()>0){
+            $("#backToTop").fadeIn();
+          }else{
+            $("#backToTop").fadeOut();
+          }
+        });
+        $("#backToTop").click(function(){
+          $("html,body").animate({
+            "scrollTop":0
+          },1000)
+        });
+      });
+    
+    script.
+      $(document).ready(function(){
+        $(window).scroll(function(){
+          if($(this).scrollTop()>0){
+            $(".header-bottom").addClass("extra-header");
+          }else{
+            $(".header-bottom").removeClass("extra-header");
+
+          }
+        });
+      });

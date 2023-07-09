@@ -1,0 +1,51 @@
+footer.footer 
+    div.container 
+        div.footer-top 
+            div.row 
+                div.col-12.col-md-6.col-lg-4.col-xl-4
+                    +footerBox({title:"Our Address"})
+                        ul.footer__list
+                            li.footer__item 
+                                i.icon(class="fas fa-map-marker-alt")
+                                span.text PO Box 16122 Collins Street West Victoria 8007 Australia
+                            li.footer__item 
+                                i.icon(class="fas fa-phone-alt")
+                                span.text +61 3 8376 6284
+                            li.footer__item 
+                                i.icon(class="far fa-envelope")
+                                span.text info123@gmail.com
+                        ul.footer__contact
+                            li.contact-item.fb
+                                i(class="fab fa-facebook-f") 
+                            li.contact-item.twitter
+                                i(class="fab fa-twitter") 
+                            li.contact-item.ins
+                                i(class="fab fa-instagram") 
+                            li.contact-item.linkin
+                                i(class="fab fa-linkedin") 
+                div.col-12.col-md-6.col-lg-4.col-xl-2
+                    +footerBox({title:"Information"})
+                        +footerItem(["About Us","Contact Us","Privacy Policy","Frequently Questions","Customer Service"])
+                div.col-12.col-md-6.col-lg-4.col-xl-2
+                    +footerBox({title:"My Account"})
+                        +footerItem(["My Account","Login Page","Shopping cart","Register Account","Logut"])
+                div.col-12.col-md-6.col-lg-4.col-xl-2
+                    +footerBox({title:"Need Help?"})
+                        ul.footer__list
+                            +footerItem(["Help Center","Fodo Market Terms","Author Terms","Fodo Licenses","Contact Us"])
+                div.col-12.col-md-6.col-lg-4.col-xl-2
+                    +footerBox({title:"Categories"})
+                        +footerItem(["Fruits & Vegetables","Dairy Products","Package Foods","Beverage","Health & Wellness"])
+        div.footer-middle
+            +categoryBox({title:"Food & Vegetable:"})
+                +categoryItem(["Carrots","Broccoli","Potato","Cauliflower","Eggplant","Potato","Chives","Cauliflower","View all"])
+            +categoryBox({title:"Health & Beauty:"})
+                +categoryItem(["Skin Care","Body Shower","Makeup","Hair","Care","Lipstick","Perfume","View all"])
+        div.footer-bottom 
+            div.row 
+                div.col-12.col-md-6.mb-4
+                    div.payment 
+                        img(src="./images/payment.png", alt="payment")
+                div.col-12.col-md-6.mb-4
+                    div.copyright 
+                        p.mb-0 Copyright © 2021 Fodo Theme by CodexUnicTheme 

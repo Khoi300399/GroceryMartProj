@@ -119,7 +119,7 @@ mixin heading(data)
         div.col-12.col-sm-6
             h2.title= data.title
         div.col-12.col-sm-6
-            div.wrapper-btn
+            div.btn-box
                 a.button(href="#!") View All
 
 mixin blogCard(data)
@@ -139,3 +139,52 @@ mixin blogCard(data)
                     span Sarah Taylor
                 span.author-btn 
                     i(class="bi bi-arrow-right")
+                
+mixin testimonialCard(data) 
+    div.testimonial-card
+        div.top 
+            div.img 
+                img(src= data.author, alt="avatar")
+            div.meta 
+                h3.name= data.name
+                div.rating
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+                    span 
+                        i(class="fas fa-star")
+            div.quote
+                img(src= data.quote, alt="...")
+        div.content 
+            p.decs= data.decs
+
+mixin footerBox(data) 
+    div.footer__box
+        h3.footer__title= data.title
+        if block 
+            block 
+mixin footerItem(data)
+    ul.footer__list
+        each val in data
+            li.footer__item 
+                span.text= val
+        else
+            li There are no values
+
+mixin categoryBox (data)
+     div.footer__category 
+        span
+            strong= data.title
+        if block 
+            block
+
+mixin categoryItem(data)
+    each val in data 
+        span.category__item= val
+    else 
+        span There are no values

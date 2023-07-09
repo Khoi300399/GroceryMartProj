@@ -1,5 +1,6 @@
 .header {
   &-top {
+    font-size: 1rem;
     padding-block: 10px;
     background: $third-color;
   }
@@ -96,7 +97,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: 10;
+    z-index: 50;
     background: #232323;
     opacity: 0.5;
     opacity: 0;
@@ -110,7 +111,7 @@
     bottom: 0;
     width: 290px;
     background-color: #fff;
-    z-index: 50;
+    z-index: 100;
     transform: translateX(-100%);
     transition: all ease 0.5s;
 
@@ -151,10 +152,47 @@
       }
     }
   }
+  .header-bottom.extra-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    box-shadow: 2px 4px 8px rgba(140, 129, 129, 0.25);
+    animation: topToDown 1s ease;
+    .logo img {
+      margin-bottom: 0;
+    }
+  }
+}
+@keyframes topToDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
+@include minWidth(389.98px) {
+  .header {
+    &-top {
+      font-size: 1.2rem;
+    }
+  }
+}
+@include minWidth(575.98px) {
+  .header {
+    &-top {
+      font-size: 1.4rem;
+    }
+  }
+}
 @include minWidth(767.98px) {
   .header {
+    &-top {
+      font-size: 1.5rem;
+    }
     .logo {
       justify-content: flex-start;
     }

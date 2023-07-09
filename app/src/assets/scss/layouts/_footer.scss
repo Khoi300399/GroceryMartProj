@@ -1,0 +1,97 @@
+.footer {
+  padding-block: 70px 20px;
+  background: #000;
+  &__box {
+    margin-bottom: 30px;
+    padding: 12px;
+  }
+  &__title {
+    font-family: $secondary-font;
+    @include text(1.8rem, 700, #fff);
+    margin-bottom: 27px;
+  }
+  &__item {
+    padding-block: 4px;
+    .icon {
+      float: left;
+      margin-top: 4px;
+      padding-right: 15px;
+      @include text(1.6rem, 600, #7bae00);
+      line-height: 26px;
+    }
+    .text {
+      @include text(1.5rem, normal, #8c8b8b);
+      line-height: 26px;
+    }
+  }
+  &__contact {
+    margin-top: 15px;
+    @include flexBox(center);
+    color: #fff;
+    gap: 5px;
+
+    .contact-item {
+      @include flexBox(center, center);
+      @include size(33px);
+      border-radius: 5px;
+      &.fb {
+        background: #084f99;
+      }
+      &.twitter {
+        background: #1da1f2;
+      }
+      &.ins {
+        background: radial-gradient(
+            circle farthest-corner at 32% 106%,
+            #ffe17d 0,
+            #ffcd69 10%,
+            #fa9137 28%,
+            #eb4141 42%,
+            transparent 82%
+          ),
+          linear-gradient(135deg, #234bd7 12%, #c33cbe 58%);
+      }
+      &.linkin {
+        background: #0e76a8;
+      }
+    }
+  }
+  &__category {
+    padding-inline: 12px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+    strong {
+      padding-right: 14px;
+      @include text(1.5rem, 600, #fff);
+    }
+    .category__item {
+      position: relative;
+      padding-inline: 14px;
+      color: #8c8b8b;
+      line-height: 1.5;
+      display: inline-block;
+
+      &:not(:first-child, :nth-child(2))::before {
+        content: "|";
+        clear: both;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #8c8b8b;
+      }
+    }
+  }
+  &-bottom {
+    padding-block: 30px 10px;
+    border-top: 1px solid #333;
+  }
+  .payment {
+    padding-inline: 12px;
+  }
+  .copyright {
+    padding-inline: 12px;
+    @include text(1.5rem, 500, #a29e9e);
+  }
+}

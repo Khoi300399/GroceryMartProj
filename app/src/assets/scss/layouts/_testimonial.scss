@@ -1,0 +1,24 @@
+.testimonial {
+  padding-block: 20px 50px;
+  overflow: hidden;
+  .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+    .owl-dot {
+      @include size(8px);
+      position: relative;
+      background: $secondary-color;
+      border-radius: 100%;
+      margin-inline: 10px;
+    }
+    .owl-dot.active::after {
+      content: "";
+      @include absoluteCenter("both");
+      border-radius: 100%;
+      display: inline-block;
+      @include size(calc(100% + 10px));
+      border: 1px solid $secondary-color;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
