@@ -12,7 +12,6 @@
 
 @mixin move($x,$y: null)
   translate: $x $y
-
 @mixin grid($column,$spacing)
   --column: #{$column}
   --spacing: #{$spacing}
@@ -24,3 +23,21 @@
 
   > *
     width: calc(100% / var(--column) - var(--spacing))
+
+@mixin position($pos: center)
+  @if $pos == tl
+    top: 0
+    left: 0
+  @if $pos == tr
+    top: 0
+    right: 0
+  @if $pos == br
+    bottom: 0
+    right: 0
+  @if $pos == bl
+    bottom: 0
+    left: 0
+  @if $pos == center
+    top: 50%
+    left: 50%
+    +move(-50%, -50%)
