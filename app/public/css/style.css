@@ -1,0 +1,2 @@
+.news-list{--column:4;--spacing:30px;display:flex;flex-wrap:wrap;row-gap:var(--spacing);column-gap:var(--spacing)}.news-list>*{width:calc(100% / var(--column) - var(--spacing))}
+/*# sourceMappingURL=style.css.map */

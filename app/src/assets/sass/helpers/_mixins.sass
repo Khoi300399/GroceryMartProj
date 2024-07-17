@@ -1,0 +1,26 @@
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+
+@mixin rounded ($tl, $tr:$tl, $br:$tl, $bl:$tl)
+  border-radius: $tl $tr $br $bl
+
+@mixin move($x,$y: null)
+  translate: $x $y
+
+@mixin grid($column,$spacing)
+  --column: #{$column}
+  --spacing: #{$spacing}
+
+  display: flex
+  flex-wrap: wrap
+  row-gap: var(--spacing)
+  column-gap: var(--spacing)
+
+  > *
+    width: calc(100% / var(--column) - var(--spacing))

@@ -17,7 +17,7 @@ const browserSync = browserSyncLib.create();
 // Cấu hình gulp-sass với trình biên dịch sass
 const sassCompiler = gulpSass(sass);
 
-// Biên dịch Sass thành CSS
+// Biên dịch SASS thành CSS
 task('sassTask', function () {
   return src('./app/**/sass/*.sass', { sourcemaps: true })
     .pipe(
@@ -84,7 +84,7 @@ task('browserSyncTask', function (done) {
 
 function watching() {
   watch('./app/src/views/**/*.pug', series('pugTask')).on('change', browserSync.reload);
-  watch('./app/src/**/*.scss', series('sassTask')).on('change', browserSync.reload);
+  watch('./app/**/sass/*.sass', series('sassTask')).on('change', browserSync.reload);
   watch('./app/src/assets/images/*', series('imageTask')).on('change', browserSync.reload);
 }
 
