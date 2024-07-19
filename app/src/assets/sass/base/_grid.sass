@@ -1,0 +1,40 @@
+@use "sass:map"
+$grid: red
+$grid-breakpoints: ("xs": 0,"sm": 576px,"md": 768px,"lg": 992px,"xl": 1200px,"xxl": 1400px)
+$container-max-widths: ("sm": 540px,"md": 720px,"lg": 960px,"xl": 1140px,"xxl": 1320px)
+$grid-columns: 12
+$grid-gutter-width: 30px
+
+%gutter-padding
+    padding-inline: $grid-gutter-width * 0.5
+
+.container-fluid
+    width: 100%
+    margin-inline: auto
+    @extend %gutter-padding
+
+.container
+    @extend .container-fluid
+
+.row
+    display: flex
+    flex-wrap: wrap
+    margin-inline: -$grid-gutter-width * 0.5
+
+.col
+    flex: 1 0
+    @extend %gutter-padding
+
+@mixin CreateMediaQuery($breakpoint)
+    @media screen and (min-width:  $breakpoint)
+        @content
+
+@each $infix,$breakpoint in $grid-breakpoints
+    $max-width: map-get($container-max-widths,$infix)
+    $if: if($infix == "xs","","-#{$infix}")
+    +CreateMediaQuery($breakpoint)
+        .containers
+            max-width: $max-width
+        @for $i from 1 through $grid-columns
+            .col#{$if}-#{$i}
+                width: calc((100% / $grid-columns) * $i)
